@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3000;
 
 // Votre clé API Gemini
-const API_KEY = "VOTRE_CLE_API"; // Remplacez par votre clé API Gemini
+const API_KEY = "AIzaSyDoymlzv_dGQ-nHlwkIVrzQqVnoBtNcjnM"; // Remplacez par votre clé API Gemini
 
 app.use(bodyParser.json());
 app.use(express.static("public")); // Servir les fichiers frontend
