@@ -1,0 +1,12 @@
+[
+  {
+    "version": "1.0.0",
+    "date": "2025-01-04",
+    "description": "Première version du bot avec Gemini API."
+  },
+  {
+    "version": "1.1.0",
+    "date": "2025-01-05",
+    "description": "Ajout de l'historique des versions et meilleure gestion des erreurs."
+  }
+]
