@@ -1,172 +1,105 @@
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-}
-
-header {
+    font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    overflow: hidden;
 }
 
-.site-name {
-    font-size: 2.5em;
-    letter-spacing: 1px;
+/* Effet stylé pour le nom PRÉSCILIA */
+.prescilia-name {
+    font-size: 5rem;
     font-weight: bold;
-    color: #FFD700;
-}
-
-.home-container {
-    position: relative;
-    height: 100vh;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #000;
+    text-shadow: 
+        2px 2px 5px rgba(255, 255, 255, 0.3),
+        0px 0px 25px rgba(255, 255, 255, 0.5),
+        0px 0px 5px rgba(255, 255, 255, 0.7);
+    animation: glow 1.5s ease-in-out infinite alternate;
     text-align: center;
-    flex-direction: column;
 }
 
-canvas {
+/* Animation d'éclat pour le nom */
+@keyframes glow {
+    0% {
+        text-shadow: 
+            2px 2px 5px rgba(255, 255, 255, 0.3),
+            0px 0px 25px rgba(255, 255, 255, 0.5),
+            0px 0px 5px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        text-shadow: 
+            0px 0px 10px rgba(255, 255, 255, 0.5),
+            0px 0px 30px rgba(255, 255, 255, 0.7),
+            0px 0px 50px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Animation des étoiles */
+.stars-animation {
     position: absolute;
-    z-index: -1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.home-content h2 {
-    color: #fff;
-    font-size: 2em;
-}
-
-.start-btn {
-    padding: 10px 20px;
+.star {
+    width: 5px;
+    height: 5px;
     background-color: #FFD700;
-    color: #000;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.start-btn:hover {
-    background-color: #f7c500;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #fff;
-}
-
-#creator-name {
-    font-weight: bold;
-    animation: typing 1.5s steps(10) infinite;
-}
-
-/* Chatbot Styles */
-.chatbot-container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.chatbot-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chatbot-header h2 {
-    font-size: 1.8em;
-    color: #000;
-}
-
-.clear-btn {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.chatbox {
-    margin-top: 20px;
-    max-height: 400px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.chat-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.chat {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.outgoing {
-    justify-content: flex-end;
-    color: #000;
-}
-
-.incoming {
-    justify-content: flex-start;
-    color: #444;
-}
-
-.chat p {
-    max-width: 70%;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #e1e1e1;
-    margin: 5px 0;
-}
-
-.send-icon {
-    background-color: #FFD700;
-    color: #000;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-.send-icon:hover {
-    background-color: #f7c500;
-}
-
-/* Typing indicator */
-.typing-indicator {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.typing .dot {
-    width: 8px;
-    height: 8px;
-    margin: 0 3px;
     border-radius: 50%;
-    background-color: #888;
-    animation: typing 1.5s infinite ease-in-out;
+    animation: twinkling 2s infinite;
+    position: absolute;
+}
+
+#star1 { top: 10%; left: 20%; animation-delay: 0.2s; }
+#star2 { top: 30%; left: 40%; animation-delay: 0.4s; }
+#star3 { top: 50%; left: 60%; animation-delay: 0.6s; }
+#star4 { top: 70%; left: 80%; animation-delay: 0.8s; }
+#star5 { top: 90%; left: 90%; animation-delay: 1s; }
+
+@keyframes twinkling {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.start-chat-btn {
+    background-color: #FFD700;
+    color: #000;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.start-chat-btn:hover {
+    background-color: #E5C100;
+}
+
+.creator-name {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #FFD700;
+    text-align: center;
+}
+
+.creator-name strong {
+    font-weight: bold;
+    animation: typing 2s steps(10) infinite;
 }
 
 @keyframes typing {
-    0% { opacity: 0.2; }
+    0% { opacity: 0.5; }
     50% { opacity: 1; }
-    100% { opacity: 0.2; }
+    100% { opacity: 0.5; }
 }
