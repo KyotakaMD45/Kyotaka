@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - PRÉSCILIA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>PRÉSCILIA - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="homepage-container">
-        <h1 class="homepage-title">PRÉSCILIA</h1>
-        <p class="homepage-subtitle">Votre compagnon intelligent et moderne.</p>
-        <button id="start-bot" class="homepage-button">Lancer PRÉSCILIA</button>
+    <header>
+        <h1 class="site-name">PRÉSCILIA</h1>
+    </header>
+    <div class="home-container">
+        <canvas id="starsCanvas"></canvas>
+        <div class="home-content">
+            <h2>Welcome to the PRÉSCILIA Chatbot</h2>
+            <button id="start-bot" class="start-btn">Start the Chatbot</button>
+        </div>
     </div>
 
-    <!-- Nom du créateur en bas -->
-    <footer class="creator-footer">
-        <p>Créé par : <span class="creator-name">PHAROUK</span></p>
+    <footer>
+        <p class="creator">Created by <span id="creator-name">PHAROUK</span></p>
     </footer>
-
-    <script>
-        // Fonction pour rediriger vers la page du bot
-        document.getElementById('start-bot').addEventListener('click', function () {
-            window.location.href = 'bot.html';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
