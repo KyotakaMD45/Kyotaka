@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRÉSCILIA - Home</title>
+    <title>Page d'Accueil - PRÉSCILIA</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="site-name">PRÉSCILIA</h1>
-    </header>
+    <!-- Conteneur de la page d'accueil -->
     <div class="home-container">
-        <canvas id="starsCanvas"></canvas>
-        <div class="home-content">
-            <h2>Welcome to the PRÉSCILIA Chatbot</h2>
-            <button id="start-bot" class="start-btn">Start the Chatbot</button>
+        <h1><span class="prescilia-name">PRÉSCILIA</span></h1>
+        <div class="stars-animation">
+            <!-- Animation étoilée -->
+            <div class="star" id="star1"></div>
+            <div class="star" id="star2"></div>
+            <div class="star" id="star3"></div>
+            <div class="star" id="star4"></div>
+            <div class="star" id="star5"></div>
         </div>
+        <button id="start-chat" class="start-chat-btn">Commencer la conversation</button>
+        <p id="creator-name" class="creator-name">Créé par <strong>PHAROUK</strong></p>
     </div>
 
-    <footer>
-        <p class="creator">Created by <span id="creator-name">PHAROUK</span></p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
