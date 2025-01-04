@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luka Chatgpt</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Accueil - PRÉSCILIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-     <div class="chatbot-container">
-        <div class="chatbot-header">
-            <h2>LUKA-GPT !</h2>
-            <div class="chatbot-actions">
-                <button id="clear-chat" class="icon-btn">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-        </div>
-        <div class="chatbox">
-            <ul class="chat-list"></ul>
-        </div>
-        <div class="chat-input">
-            <textarea placeholder="Ton message..."></textarea>
-            <span class="material-symbols-outlined send-icon">send</span>
-        </div>
+<body>
+    <div class="homepage-container">
+        <h1 class="homepage-title">PRÉSCILIA</h1>
+        <p class="homepage-subtitle">Votre compagnon intelligent et moderne.</p>
+        <button id="start-bot" class="homepage-button">Lancer PRÉSCILIA</button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Nom du créateur en bas -->
+    <footer class="creator-footer">
+        <p>Créé par : <span class="creator-name">PHAROUK</span></p>
+    </footer>
+
+    <script>
+        // Fonction pour rediriger vers la page du bot
+        document.getElementById('start-bot').addEventListener('click', function () {
+            window.location.href = 'bot.html';
+        });
+    </script>
 </body>
 </html>
