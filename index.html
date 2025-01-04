@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRÉSCILIA-BOT</title>
+    <title>Préscilia Chatbot</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="home-container">
-        <h1 class="bot-name">PRÉSCILIA-BOT</h1>
-        <p class="description">Welcome to PRÉSCILIA-BOT. Click below to start the conversation.</p>
-        <a href="bot.html" class="start-btn">Start Conversation</a>
+<body> 
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>Préscilia</h2>
+            <div class="chatbot-actions">
+                <button id="clear-chat" class="icon-btn">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+            </div>
+        </div>
+        <div class="chatbox">
+            <ul class="chat-list"></ul>
+        </div>
+        <div class="chat-input">
+            <textarea placeholder="Ton message..."></textarea>
+            <span class="material-symbols-outlined send-icon">send</span>
+        </div>
     </div>
+
+    <footer>
+        <p>Created by <span class="creator-name">Your Name</span></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
