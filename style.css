@@ -1,142 +1,119 @@
-/* Global Styles */
+/* Styling the overall layout */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #fff;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: white;
 }
 
-h1, h2 {
-    font-size: 2rem;
-    text-align: center;
-}
-
-/* Home Page Styles */
-.home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #121212;
-    text-align: center;
-}
-
-.bot-name {
-    font-size: 3rem;
-    color: #ffcc00;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
-}
-
-.description {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 30px;
-}
-
-.start-btn {
-    padding: 15px 30px;
-    background-color: #ffcc00;
-    color: #121212;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-}
-
-.start-btn:hover {
-    background-color: #ff9800;
-}
-
-/* Chatbot Styles */
 .chatbot-container {
-    width: 100%;
-    max-width: 800px;
+    width: 400px;
+    max-width: 92%;
     margin: 50px auto;
-    background-color: #1c1c1c;
-    padding: 20px;
+    background-color: #111;
+    border: 1px solid #0f0;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #0f0;
 }
 
 .chatbot-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #000;
+    color: #0f0;
+    font-family: "Times", serif;
+}
+
+.chatbot-header h2 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #00ff00;
+    text-indent: 15pt;
 }
 
 .chatbox {
-    height: 400px;
+    height: 480px;
+    background-color: rgba(6, 6, 21, 0.8);
+    border-top: 2px solid #ffa500;
     overflow-y: auto;
-    margin-bottom: 20px;
-    padding-right: 10px;
-}
-
-.chat-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 10px;
 }
 
 .chat {
+    margin: 10px 0;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    animation: fadeIn 0.5s forwards;
+}
+
+.chat.incoming .material-symbols-outlined {
+    margin-right: 10px;
+    color: #00ff00;
 }
 
 .chat p {
-    margin: 0;
-    font-size: 1rem;
+    background-color: #111;
+    color: #00ff00;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
 }
 
-.outgoing p {
-    color: #ffcc00;
-}
-
-.incoming p {
-    color: #fff;
-}
-
-.clear-btn {
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #121212;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.clear-btn:hover {
-    background-color: #ff9800;
+.chat.outgoing p {
+    background-color: #0f0;
+    color: #000;
+    margin-left: auto;
 }
 
 .chat-input {
     display: flex;
-    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    border-top: 1px solid #00ff00;
 }
 
 .chat-input textarea {
-    width: 80%;
-    height: 50px;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
+    flex: 1;
     border: none;
-    background-color: #333;
+    padding: 10px;
+    border-radius: 20px;
+    resize: none;
+    background-color: #222;
     color: #fff;
 }
 
-.send-btn {
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #121212;
-    border: none;
-    border-radius: 5px;
+.send-icon {
+    padding-top: 7px;
+    font-size: 24px;
+    color: #0f0;
+    margin-left: 10px;
     cursor: pointer;
 }
 
-.send-btn:hover {
-    background-color: #ff9800;
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #ff1493;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer .creator-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff1493;
+    letter-spacing: 2px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
