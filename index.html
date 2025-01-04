@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gemini Bot 🤖</h1>
+      <p>Posez vos questions, et Gemini répondra instantanément !</p>
+      <small id="version">Version : Chargement...</small>
+    </header>
+    <main>
+      <textarea id="userInput" placeholder="Posez une question ici..." rows="4"></textarea>
+      <button id="sendBtn" onclick="sendRequest()">Envoyer</button>
+      <div id="response" class="response-box"></div>
+
+      <section id="changelog">
+        <h2>Historique des versions</h2>
+        <ul id="changelog-list"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>Créé avec ❤️ par [Votre Nom] | <a href="#">Politique de confidentialité</a></p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
