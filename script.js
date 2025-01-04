@@ -3,7 +3,7 @@ const chatList = document.querySelector(".chat-list");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".send-btn");
 
-const API_KEY = "AIzaSyDz13HGa06peRypv6_B-XA9_mXJ9U8ArZk"; // Replace with your API key
+const API_KEY = "AIzaSyAlgCGWEJVof5--FLwewqEkTAsEKSjJDh8"; // Replace with your API key
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
 
 clearChatBtn.addEventListener("click", () => {
@@ -24,20 +24,35 @@ const showTypingIndicator = () => {
     return typingIndicator;
 };
 
+// Updated generateResponse function
 const generateResponse = async (userMessage) => {
     const requestOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            prompt: { text: userMessage },
+            "model": "gemini-pro",  // Ensure the correct model is being used (adjust if necessary)
+            "messages": [
+                {
+                    "role": "user",  // The user's role in the conversation
+                    "content": userMessage
+                }
+            ]
         }),
     };
 
     try {
         const response = await fetch(API_URL, requestOptions);
         const data = await response.json();
+        
+        // Check if response is successful
         if (!response.ok) throw new Error(data.error.message);
-        return data.candidates[0].output;
+        
+        // Check if the response structure matches your expectation
+        if (data && data.candidates && data.candidates[0] && data.candidates[0].content) {
+            return data.candidates[0].content.parts[0].text || "Sorry, I couldn't understand that.";
+        } else {
+            throw new Error("Unexpected response format.");
+        }
     } catch (error) {
         return `Error: ${error.message}`;
     }
