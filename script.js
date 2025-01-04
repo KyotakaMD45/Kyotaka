@@ -1,9 +1,9 @@
 const clearChatBtn = document.getElementById("clear-chat");
 const chatList = document.querySelector(".chat-list");
 const chatInput = document.querySelector(".chat-input textarea");
-const sendChatBtn = document.querySelector(".send-icon");
+const sendChatBtn = document.querySelector(".send-btn");
 
-const API_KEY = "AIzaSyAlgCGWEJVof5--FLwewqEkTAsEKSjJDh8"; // Remplace par ta clé API
+const API_KEY = "AIzaSyAlgCGWEJVof5--FLwewqEkTAsEKSjJDh8"; // Replace with your API key
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
 
 clearChatBtn.addEventListener("click", () => {
@@ -47,7 +47,7 @@ sendChatBtn.addEventListener("click", async () => {
     const userMessage = chatInput.value.trim();
     if (userMessage === "") return;
 
-    // Envoi du message de l'utilisateur
+    // User message
     const outgoingChat = document.createElement("li");
     outgoingChat.classList.add("chat", "outgoing");
     outgoingChat.innerHTML = `<p>${userMessage}</p>`;
@@ -55,13 +55,13 @@ sendChatBtn.addEventListener("click", async () => {
     chatInput.value = "";
     chatList.scrollTop = chatList.scrollHeight;
 
-    // Affichage de l'indicateur de saisie
+    // Typing indicator
     const typingIndicator = showTypingIndicator();
 
-    // Génération de la réponse du bot
+    // Bot response
     const botMessage = await generateResponse(userMessage);
 
-    // Affichage de la réponse du bot après un délai
+    // Display response after delay
     setTimeout(() => {
         typingIndicator.remove();
         const incomingChat = document.createElement("li");
