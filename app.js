@@ -1,5 +1,5 @@
 async function sendRequest() {
-  const API_KEY = "VOTRE_CLE_API"; // Remplacez par votre clé API Gemini
+  const API_KEY = "AIzaSyDz13HGa06peRypv6_B-XA9_mXJ9U8ArZk"; // Remplacez par votre clé API Gemini
   const userInput = document.getElementById("userInput").value;
   const responseDiv = document.getElementById("response");
   const sendBtn = document.getElementById("sendBtn");
