@@ -1,53 +1,24 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f5f5f5;
+/* Footer contenant le nom du créateur */
+.creator-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ccc; /* Texte gris clair */
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
-.container {
-  text-align: center;
-  max-width: 500px;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.creator-name {
+    font-weight: bold;
+    color: #FFD700; /* Couleur or */
+    animation: typing 1s infinite;
 }
 
-h1 {
-  color: #333;
-}
-
-textarea {
-  width: 100%;
-  height: 100px;
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #007BFF;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-#response {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #333;
+/* Effet clignotant (comme si on écrit) */
+@keyframes typing {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.1%, 100% {
+        opacity: 0;
+    }
 }
