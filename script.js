@@ -3,7 +3,7 @@ const chatList = document.querySelector(".chat-list");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".send-btn");
 
-const API_KEY = "AIzaSyAlgCGWEJVof5--FLwewqEkTAsEKSjJDh8"; // Replace with your API key
+const API_KEY = "AIzaSyDz13HGa06peRypv6_B-XA9_mXJ9U8ArZk"; // Replace with your API key
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
 
 clearChatBtn.addEventListener("click", () => {
