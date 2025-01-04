@@ -1,92 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bot Gemini</title>
-
-  <!-- Ajout d'un peu de CSS pour améliorer le design -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      width: 80%;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #3a3a3a;
-    }
-
-    #userInput {
-      width: 100%;
-      padding: 10px;
-      margin: 20px 0;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    #sendBtn {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-
-    #sendBtn:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-
-    #sendBtn:hover:not(:disabled) {
-      background-color: #45a049;
-    }
-
-    #response {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #f8f8f8;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      color: #333;
-    }
-
-    .loading {
-      font-style: italic;
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luka Chatgpt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Interagissez avec Gemini</h1>
-    <input type="text" id="userInput" placeholder="Entrez votre texte" class="input-text">
-    <button id="sendBtn" onclick="sendRequest()">Envoyer</button>
-    <div id="response" class="response"></div>
-  </div>
-
-  <!-- Lien vers le fichier JavaScript -->
-  <script src="app.js"></script>
+<body> 
+     <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>LUKA-GPT !</h2>
+            <div class="chatbot-actions">
+                <button id="clear-chat" class="icon-btn">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+            </div>
+        </div>
+        <div class="chatbox">
+            <ul class="chat-list"></ul>
+        </div>
+        <div class="chat-input">
+            <textarea placeholder="Ton message..."></textarea>
+            <span class="material-symbols-outlined send-icon">send</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
