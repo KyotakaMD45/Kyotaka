@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRÉSCILIA-BOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000; /* Noir lumineux */
+            --accent-color: #25D366; /* Vert WhatsApp */
+            --text-color: #FFFFFF; /* Blanc pour le contraste */
+            --incoming-bg: #262626; /* Gris foncé pour les messages entrants */
+            --outgoing-bg: #128C7E; /* Vert des messages sortants */
+            --delete-hover: #FF6347; /* Rouge pour le bouton "Supprimer" */
+            --bot-header: linear-gradient(45deg, #25D366, #128C7E); /* Effet lumineux */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        .chatbot-container {
+            width: 450px;
+            max-width: 90%;
+            margin: 50px auto;
+            background-color: var(--primary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        .chatbot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: var(--bot-header);
+            color: var(--text-color);
+        }
+
+        .chatbot-header h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px var(--accent-color);
+            animation: glowing 1.5s infinite alternate;
+        }
+
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color); }
+            100% { text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .icon-btn:hover {
+            transform: rotate(360deg);
+            color: var(--delete-hover);
+        }
+
+        .chatbox {
+            height: 450px;
+            background-color: #1C1C1C;
+            border-top: 2px solid var(--accent-color);
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .chat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .chat p {
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+
+        .chat.incoming {
+            justify-content: flex-start;
+        }
+
+        .chat.incoming p {
+            background-color: var(--incoming-bg);
+            color: var(--text-color);
+        }
+
+        .chat.outgoing {
+            justify-content: flex-end;
+        }
+
+        .chat.outgoing p {
+            background-color: var(--outgoing-bg);
+            color: var(--text-color);
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: #2B2B2B;
+            border-top: 2px solid var(--accent-color);
+        }
+
+        .chat-input textarea {
+            flex: 1;
+            border: none;
+            padding: 15px;
+            border-radius: 20px;
+            resize: none;
+            background-color: #333333;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+
+        .chat-input textarea:focus {
+            outline: none;
+        }
+
+        .send-icon {
+            padding-top: 5px;
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .chatbot-footer {
+            text-align: center;
+            padding: 15px;
+            background: var(--bot-header);
+            font-size: 14px;
+            color: var(--text-color);
+            border-top: 2px solid var(--accent-color);
+        }
+
+        .chatbot-footer p {
+            margin: 5px 0;
+        }
+
+        .chatbot-footer .name {
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 8px var(--accent-color);
+        }
+
+        .chatbot-footer .role {
+            font-size: 12px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>PRÉSCILIA-BOT</h2>
+            <button id="clear-chat" class="icon-btn">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+        <div class="chatbox">
+            <ul class="chat-list"></ul>
+        </div>
+        <div class="chat-input">
+            <textarea placeholder="Your message..."></textarea>
+            <span class="material-symbols-outlined send-icon">send</span>
+        </div>
+        <div class="chatbot-footer">
+            <p class="name">Luka</p>
+            <p class="role">Main Developer</p>
+            <p class="name">Pharouk</p>
+            <p class="role">Creator</p>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = "AIzaSyAlgCGWEJVof5--FLwewqEkTAsEKSjJDh8";
+        const chatInput = document.querySelector(".chat-input textarea");
+        const sendChatBtn = document.querySelector(".send-icon");
+        const chatList = document.querySelector(".chat-list");
+        const clearChatBtn = document.getElementById("clear-chat");
+
+        clearChatBtn.addEventListener("click", () => {
+            chatList.innerHTML = "";
+        });
+
+        sendChatBtn.addEventListener("click", () => {
+            const userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+
+            const outgoingChat = document.createElement("li");
+            outgoingChat.classList.add("chat", "outgoing");
+            outgoingChat.innerHTML = `<p>${userMessage}</p>`;
+            chatList.appendChild(outgoingChat);
+            chatInput.value = "";
+            chatList.scrollTop = chatList.scrollHeight;
+        });
+    </script>
+</body>
+</html>
